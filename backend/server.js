@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth');
 const employeeRoutes = require('./routes/employee');
-const leaveRoutes = require('./routes/leave');   // ✅ NEW LINE
+const leaveRoutes = require('./routes/leave');
+const attendanceRoutes = require('./routes/attendance'); 
 const { verifyToken, checkRole } = require('./middleware/auth');
 
 const app = express();
@@ -14,6 +15,7 @@ mongoose.connect('mongodb://localhost/hrms', { useNewUrlParser: true, useUnified
 // Routes
 app.use('/auth', authRoutes);
 app.use('/employee', verifyToken, checkRole(['Employee','Manager','HR','Admin']), employeeRoutes);
-app.use('/leave', verifyToken, leaveRoutes);     // ✅ NEW LINE
+app.use('/leave', verifyToken, leaveRoutes);
+app.use('/attendance', verifyToken, attendanceRoutes);    
 
 app.listen(5000, () => console.log('HRMS backend running on port 5000'));
