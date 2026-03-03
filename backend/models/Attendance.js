@@ -5,11 +5,11 @@ const AttendanceSchema = new mongoose.Schema({
   date: { type: Date, required: true },
   status: { 
     type: String, 
-    enum: ['Present', 'Absent', 'Leave'], 
-    default: 'Present' 
+    enum: ['Present', 'Absent', 'Half Day', 'Holiday'], 
+    required: true 
   },
-  checkInTime: { type: Date },
-  checkOutTime: { type: Date }
-});
+  checkIn: { type: Date },
+  checkOut: { type: Date }
+}, { timestamps: true });
 
 module.exports = mongoose.model('Attendance', AttendanceSchema);
