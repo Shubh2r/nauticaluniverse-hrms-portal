@@ -4,6 +4,7 @@ const authRoutes = require('./routes/auth');
 const employeeRoutes = require('./routes/employee');
 const leaveRoutes = require('./routes/leave');
 const attendanceRoutes = require('./routes/attendance'); 
+const queryRoutes = require('./routes/query');   
 const { verifyToken, checkRole } = require('./middleware/auth');
 
 const app = express();
@@ -17,5 +18,6 @@ app.use('/auth', authRoutes);
 app.use('/employee', verifyToken, checkRole(['Employee','Manager','HR','Admin']), employeeRoutes);
 app.use('/leave', verifyToken, leaveRoutes);
 app.use('/attendance', verifyToken, attendanceRoutes);    
+app.use('/query', verifyToken, queryRoutes);   
 
 app.listen(5000, () => console.log('HRMS backend running on port 5000'));
