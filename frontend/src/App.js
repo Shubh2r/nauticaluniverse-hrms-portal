@@ -5,19 +5,21 @@ import AdminPortal from './pages/AdminPortal';
 import Profile from './pages/Profile';
 import ProfileApproval from './pages/ProfileApproval';
 import Query from './pages/Query';
+import MyQueries from './pages/MyQueries';
 import QueryManagement from './pages/QueryManagement';
 import Navbar from './components/Navbar';
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />   {/* Navigation bar */}
+      <Navbar />
       <Routes>
         <Route path="/employee" element={<EmployeePortal />} />
         <Route path="/admin" element={<AdminPortal />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile-approval" element={<ProfileApproval />} />
         <Route path="/query" element={<Query />} />
+        <Route path="/my-queries" element={<MyQueries />} />
         <Route path="/query-management" element={<QueryManagement />} />
       </Routes>
     </BrowserRouter>
