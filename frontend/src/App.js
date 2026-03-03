@@ -7,6 +7,8 @@ import ProfileApproval from './pages/ProfileApproval';
 import Query from './pages/Query';
 import MyQueries from './pages/MyQueries';
 import QueryManagement from './pages/QueryManagement';
+import Leave from './pages/Leave';
+import LeaveManagement from './pages/LeaveManagement';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Route path="/query" element={<Query />} />
         <Route path="/my-queries" element={<MyQueries />} />
         <Route path="/query-management" element={<QueryManagement />} />
+        <Route path="/leave" element={<Leave />} />
+        <Route path="/leave-management" element={<LeaveManagement />} />
       </Routes>
     </BrowserRouter>
   );
