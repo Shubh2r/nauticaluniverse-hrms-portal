@@ -22,6 +22,15 @@ export default function QueryManagement() {
     .catch(err => alert(err.response.data));
   };
 
+  const closeQuery = (id) => {
+    const token = localStorage.getItem('token');
+    axios.put(`/query/${id}/respond`, { status: 'Closed', hrResponse: 'Ticket closed by HR' }, {
+      headers: { Authorization: token }
+    })
+    .then(res => alert(res.data))
+    .catch(err => alert(err.response.data));
+  };
+
   return (
     <div>
       <h2>HR Query Management</h2>
@@ -44,6 +53,9 @@ export default function QueryManagement() {
           </select>
           <button onClick={() => respondToQuery(query._id, query.hrResponse, query.status)}>
             Submit Response
+          </button>
+          <button onClick={() => closeQuery(query._id)} style={{ marginLeft: '10px', color: 'red' }}>
+            Close Query
           </button>
         </div>
       ))}
