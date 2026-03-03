@@ -9,6 +9,7 @@ export default function Navbar() {
       <Link to="/query" style={{ marginRight: '15px' }}>Raise Query</Link>
       <Link to="/admin" style={{ marginRight: '15px' }}>Admin Dashboard</Link>
       <Link to="/profile-approval" style={{ marginRight: '15px' }}>Profile Approvals</Link>
+      <Link to="/query-management" style={{ marginRight: '15px' }}>Manage Queries</Link>
     </nav>
   );
 }
