@@ -9,6 +9,7 @@ import MyQueries from './pages/MyQueries';
 import QueryManagement from './pages/QueryManagement';
 import Leave from './pages/Leave';
 import LeaveManagement from './pages/LeaveManagement';
+import Calendar from './pages/Calendar';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/query-management" element={<QueryManagement />} />
         <Route path="/leave" element={<Leave />} />
         <Route path="/leave-management" element={<LeaveManagement />} />
+        <Route path="/calendar" element={<Calendar />} />
       </Routes>
     </BrowserRouter>
   );
