@@ -24,7 +24,7 @@ export default function QueryManagement() {
 
   const closeQuery = (id) => {
     const token = localStorage.getItem('token');
-    axios.put(`/query/${id}/respond`, { status: 'Closed', hrResponse: 'Ticket closed by HR' }, {
+    axios.put(`/query/${id}/close`, { hrResponse: 'Ticket closed by HR/Admin' }, {
       headers: { Authorization: token }
     })
     .then(res => alert(res.data))
