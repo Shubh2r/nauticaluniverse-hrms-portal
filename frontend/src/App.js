@@ -4,10 +4,12 @@ import EmployeePortal from './pages/EmployeePortal';
 import AdminPortal from './pages/AdminPortal';
 import Profile from './pages/Profile';
 import ProfileApproval from './pages/ProfileApproval';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />   {/* ✅ Navigation bar added */}
       <Routes>
         <Route path="/employee" element={<EmployeePortal />} />
         <Route path="/admin" element={<AdminPortal />} />
